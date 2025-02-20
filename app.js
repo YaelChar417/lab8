@@ -18,3 +18,27 @@ const text = "Me gusta la pizza sin piña";
 const fs = require('fs');
 fs.writeFileSync('hola.txt', text);
 console.log('El mensaje escrito fue: ', text);
+
+class Cuadrado{
+    constructor(nombre, lado){
+        this.nombre = nombre;
+        this.lado = lado;
+    }
+
+    calcularArea(){
+        return this.lado * this.lado;
+    }
+
+    calcularPerimetro(){
+        return this.lado * 4;
+    }
+
+    toString(){
+        return `Hola soy el cuadrado ${this.nombre} con lado ${this.lado} cm`;
+    }
+}
+
+const cuadrado = new Cuadrado("Rex", 10.5);
+console.log(cuadrado.toString());
+console.log("Area: " + cuadrado.calcularArea());
+console.log("Perimetro: " + cuadrado.calcularPerimetro());
