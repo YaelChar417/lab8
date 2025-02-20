@@ -13,7 +13,10 @@ for(let item of arreglo)
 
 const http = require('http');
 const server = http.createServer( (request, response) => {
-
+    response.setHeader('Content-Type', 'text/html');
+    response.write("<h1>Hola mundo !</h1>");
+    response.end();
 });
 
+console.log("Escuchando puerto 3000")
 server.listen(3000);
