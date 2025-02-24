@@ -42,3 +42,20 @@ const cuadrado = new Cuadrado("Rex", 10.5);
 console.log(cuadrado.toString());
 console.log("Area: " + cuadrado.calcularArea());
 console.log("Perimetro: " + cuadrado.calcularPerimetro());
+
+// Dirigir al usuario a una pagina web
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+    if (req.url === '/') {
+        res.writeHead(302, { 'Location': 'https://yaelchar417.github.io/familiaElric/' });
+        res.end();
+    } else {
+        res.writeHead(404, { 'Content-Type': 'text/plain' });
+        res.end('Página no encontrada');
+    }
+});
+
+server.listen(3000, () => {
+    console.log(`Servidor corriendo en http://localhost:3000`);
+});
